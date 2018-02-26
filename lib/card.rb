@@ -20,7 +20,16 @@ class Card
   end
 
   def to_s
-    return "#{value} of #{suit.to_s}"
+    face_cards = %W[Jack Queen King]
+    face_card_adjuster = 11
+    if value > 0 && value < 11
+      return "#{value} of #{suit.to_s}"
+    else
+      return "#{face_cards[value - face_card_adjuster]} of #{suit.to_s}"
+    end
+    # if @value.between?(2,10)
+    #   return "#{value} of #{suit.to_s}"
+    # end
   end
 
 end

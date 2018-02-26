@@ -27,11 +27,28 @@ describe Card do
     it "to_s returns a readable String value logically for values 2-10" do
       # Test to ensure that to_s works for cards values 2-10
       # for example:  "2 of diamonds"
+      # Given When Then
+      # Arrange Act Assert
+      hearts10 = Card.new(10, :hearts)
+      diamonds5 = Card.new(5, :diamonds)
+      # clubs12 = Card.new(12, :clubs)
+
+      hearts10.to_s.must_equal "10 of hearts"
+      diamonds5.to_s.must_equal "5 of diamonds"
     end
 
     it "to_s returns a readable String value for Ace, Jack, Queen, King" do
       # Test to ensure that to_s works for cards values 1, and 11-13
       # For example: "Queen of hearts"
+      # Given When Then
+      # Arrange Act Assert
+      hearts1 = Card.new(1, :hearts)
+      diamonds11 = Card.new(11, :diamonds)
+      clubs12 = Card.new(12, :clubs)
+
+      hearts1.to_s.must_equal "Ace of hearts"
+      diamonds11.to_s.must_equal "Jack of diamonds"
+      clubs12.to_s.must_equal "Queen of clubs"
     end
   end
 
