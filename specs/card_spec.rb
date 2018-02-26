@@ -18,7 +18,7 @@ describe Card do
       # raise ArgumentError.new
       proc {Card.new(0, :diamonds)}.must_raise ArgumentError
       proc {Card.new(14, :diamonds)}.must_raise ArgumentError
-      proc {Card.new(14, :clovers)}.must_raise ArgumentError
+      proc {Card.new(13, :clovers)}.must_raise ArgumentError
     end
   end
 
