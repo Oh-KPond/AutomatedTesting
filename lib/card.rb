@@ -5,14 +5,20 @@ class Card
   attr_reader :value, :suit
 
   def initialize(value, suit)
+    valid_suits = [:hearts, :spades, :clubs, :diamonds]
+
+    unless valid_suits.include?(suit) && (1..13) === value
+      raise ArgumentError.new("Error: Can not make 0 cards or more than 13 cards.")
+    end
+
     @value = value
     @suit = suit
 
-    if value == 0 || value > 13
-      raise ArgumentError.new("Error: Can not make 0 cards or more than 13 cards.")
-    elsif ![:hearts, :spades, :clubs, :diamonds].include?(suit)
-      raise ArgumentError.new("Error: Can not make a card with new suit.")
-    end
+    # if value == 0 || value > 13
+    #   raise ArgumentError.new("Error: Can not make 0 cards or more than 13 cards.")
+    # elsif ![:hearts, :spades, :clubs, :diamonds].include?(suit)
+    #   raise ArgumentError.new("Error: Can not make a card with new suit.")
+    # end
   end
 
   def to_s
